@@ -19,4 +19,7 @@ describe('#Anagram') do
     words = Anagram.new()
     expect(words.compared_words("Cat's", "Tac.s")).to(eq("These are anagrams!"))
   end
+  it("returns false telling a user that it is not a word") do
+    words = Anagram.new()
+    expect(words.compared_words("wpg", "mdl")).to(eq("Invalid word!"))
 end
