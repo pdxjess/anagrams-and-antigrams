@@ -15,4 +15,8 @@ describe('#Anagram') do
     words = Anagram.new()
     expect(words.compared_words("Jess", "George")).to(eq("These are antigrams!"))
   end
+  it("returns false when the letters do not match") do
+    words = Anagram.new()
+    expect(words.compared_words("Cat's", "Tac.s")).to(eq("These are anagrams!"))
+  end
 end
