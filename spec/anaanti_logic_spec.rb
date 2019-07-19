@@ -7,8 +7,12 @@ describe('#Anagram') do
     words = Anagram.new()
     expect(words.compared_words("tac", "cat")).to(eq("These are anagrams!"))
   end
-  it("returns true even if letters are capitalized 'cat' matches 'tac'") do
+  it("returns true even if letters are capitalized 'CAt' matches 'Tac'") do
     words = Anagram.new()
     expect(words.compared_words("CAt", "Tac")).to(eq("These are anagrams!"))
+  end
+  it("returns false when the letters do not match") do
+    words = Anagram.new()
+    expect(words.compared_words("Jess", "George")).to(eq("These are antigrams!"))
   end
 end
