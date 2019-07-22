@@ -2,22 +2,22 @@ require('pry')
 
   class Anagram
     def initialize(word)
-      @word1 = word1
+      @word = word
     end
 
-    def compared_words(word1, word2)
-      @word1 = word1
-      word1 = word1.gsub(/[.!'?,]/, '')
-      word2 = word2.gsub(/[.!'?,]/, '')
-      if word1.chars.sort() == word2.chars.sort()
+    def compared_words(wordOne, wordTwo)
+      @word = wordOne
+      wordOne = wordOne.gsub(/[.!'?,]/, '')
+      wordTwo = wordTwo.gsub(/[.!'?,]/, '')
+      if wordOne.chars.sort() == wordTwo.chars.sort()
         "These are anagrams"
-      elsif word1.downcase() == word2.downcase()
+      elsif wordOne.downcase().chars.sort() == wordTwo.downcase().chars.sort()
         "These are anagrams"
-      elsif word1.scan(/[aeiouy]/).count == 0
+      elsif wordOne.scan(/[aeiouy]/).count == 0
         "Invalid word"
-      elsif word2.scan(/[aeiouy]/).count == 0
+      elsif wordTwo.scan(/[aeiouy]/).count == 0
         "Invalid word"
-      elsif word1.chars.sort() != word2.chars.sort()
+      elsif wordOne.chars.sort() != wordTwo.chars.sort()
         "These are antigrams"
       else
         "Enter two words:"
