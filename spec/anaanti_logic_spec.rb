@@ -23,4 +23,8 @@ describe('#Anagram') do
     wordOne = Anagram.new("tac")
     expect(wordOne.compared_words("mdl", "lhk")).to(eq("Invalid word"))
   end
+  it("returns false telling a user that it is not an antigram or anagram") do
+    wordOne = Anagram.new("bunny")
+    expect(wordOne.compared_words("bunny", "puppy")).to(eq("These are neither antigrams or anagrams"))
+  end
 end

@@ -9,18 +9,22 @@ require('pry')
       @word = wordOne
       wordOne = wordOne.gsub(/[.!'?,]/, '')
       wordTwo = wordTwo.gsub(/[.!'?,]/, '')
-      if wordOne.chars.sort() == wordTwo.chars.sort()
+      if wordOne.scan(/[aeiouy]/).count == 0
+      "Invalid word"
+      elsif wordTwo.scan(/[aeiouy]/).count == 0
+        "Invalid word"
+      elsif wordOne.chars.sort() == wordTwo.chars.sort()
         "These are anagrams"
       elsif wordOne.downcase().chars.sort() == wordTwo.downcase().chars.sort()
         "These are anagrams"
-      elsif wordOne.scan(/[aeiouy]/).count == 0
-        "Invalid word"
-      elsif wordTwo.scan(/[aeiouy]/).count == 0
-        "Invalid word"
       elsif wordOne.chars.sort() != wordTwo.chars.sort()
         "These are antigrams"
+      elsif wordOne.scan(/[aeiouy]/).count == 1
+        "These are neither antigrams nor anagrams"
+      elsif wordTwo.scan(/[aeiouy]/).count == 1
+        "These are neither antigrams nor anagrams"
       else
-        "Enter two words:"
+        "Enter a word:"
     end
   end
 end
