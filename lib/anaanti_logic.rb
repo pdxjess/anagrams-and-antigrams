@@ -16,18 +16,13 @@ require('pry')
       elsif wordOne.chars.sort() == wordTwo.chars.sort()
         "These are anagrams"
       else
-        "Enter a word:"
+        "These are neither antigrams or anagrams"
       end
     end
 
     def antigram()
       if wordOne.chars.sort() != wordTwo.chars.sort()
         "These are antigrams"
-      elsif wordOne.scan(/[aeiouy]/).count == 1
-        "These are neither antigrams nor anagrams"
-      elsif wordTwo.scan(/[aeiouy]/).count == 1
-        "These are neither antigrams nor anagrams"
-      else
     end
   end
 end

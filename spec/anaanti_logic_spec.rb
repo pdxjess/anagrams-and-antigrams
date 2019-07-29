@@ -25,6 +25,6 @@ describe('#Anagram') do
   end
   it("returns false telling a user that it is not an antigram or anagram") do
     word = Anagram.new("bunny", "puppy")
-    expect(word.antigram()).to(eq("These are neither antigrams or anagrams"))
+    expect(word.anagram()).to(eq("These are neither antigrams or anagrams"))
   end
 end
