@@ -1,30 +1,33 @@
 require('pry')
 
   class Anagram
-    def initialize(word)
-      @word = word
+    attr_accessor(:wordOne, :wordTwo)
+
+    def initialize(wordOne, wordTwo)
+      @wordOne = wordOne.downcase.gsub(/[.!'?,]/, '')
+      @wordTwo = wordTwo.downcase.gsub(/[.!'?,]/, '')
     end
 
-    def compared_words(wordOne, wordTwo)
-      @word = wordOne
-      wordOne = wordOne.gsub(/[.!'?,]/, '')
-      wordTwo = wordTwo.gsub(/[.!'?,]/, '')
+    def anagram()
       if wordOne.scan(/[aeiouy]/).count == 0
       "Invalid word"
       elsif wordTwo.scan(/[aeiouy]/).count == 0
         "Invalid word"
       elsif wordOne.chars.sort() == wordTwo.chars.sort()
         "These are anagrams"
-      elsif wordOne.downcase().chars.sort() == wordTwo.downcase().chars.sort()
-        "These are anagrams"
-      elsif wordOne.chars.sort() != wordTwo.chars.sort()
+      else
+        "Enter a word:"
+      end
+    end
+
+    def antigram()
+      if wordOne.chars.sort() != wordTwo.chars.sort()
         "These are antigrams"
       elsif wordOne.scan(/[aeiouy]/).count == 1
         "These are neither antigrams nor anagrams"
       elsif wordTwo.scan(/[aeiouy]/).count == 1
         "These are neither antigrams nor anagrams"
       else
-        "Enter a word:"
     end
   end
 end
