@@ -9,9 +9,7 @@ require('pry')
     end
 
     def anagram()
-      if wordOne.scan(/[aeiouy]/).count == 0
-      "Invalid word"
-      elsif wordTwo.scan(/[aeiouy]/).count == 0
+      if wordOne.scan(/[aeiouy]/).count == 0 || wordTwo.scan(/[aeiouy]/).count == 0
         "Invalid word"
       elsif wordOne.chars.sort() == wordTwo.chars.sort()
         "These are anagrams"
@@ -21,7 +19,7 @@ require('pry')
     end
 
     def antigram()
-      if wordOne.chars.sort() != wordTwo.chars.sort()
+      if wordOne.count(wordTwo) == 0 
         "These are antigrams"
     end
   end

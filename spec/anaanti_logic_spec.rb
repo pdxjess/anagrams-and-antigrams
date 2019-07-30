@@ -16,7 +16,7 @@ describe('#Anagram') do
     expect(word.anagram()).to(eq("These are anagrams"))
   end
   it("returns false when the letters do not match") do
-    word = Anagram.new("tac", "loop")
+    word = Anagram.new("star", "loop")
     expect(word.antigram()).to(eq("These are antigrams"))
   end
   it("returns false telling a user that it is not a word") do
